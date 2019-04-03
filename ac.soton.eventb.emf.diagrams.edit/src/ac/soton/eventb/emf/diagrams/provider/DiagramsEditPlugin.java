@@ -8,9 +8,12 @@
  */
 package ac.soton.eventb.emf.diagrams.provider;
 
+import ac.soton.eventb.emf.containment.provider.ContainmentEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.eventb.emf.core.provider.EventbcoreEditPlugin;
 
 /**
  * This is the central singleton for the Diagrams edit plugin.
@@ -51,6 +54,9 @@ public final class DiagramsEditPlugin extends EMFPlugin {
 	public DiagramsEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     ContainmentEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
+		     EventbcoreEditPlugin.INSTANCE,
 		   });
 	}
 

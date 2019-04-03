@@ -6,6 +6,7 @@
  */
 package ac.soton.eventb.emf.diagrams;
 
+import ac.soton.eventb.emf.containment.AbstractContainableElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Diagram extends EObject {
+public interface Diagram extends AbstractContainableElement {
 
 	/**
 	 * <!-- begin-user-doc -->

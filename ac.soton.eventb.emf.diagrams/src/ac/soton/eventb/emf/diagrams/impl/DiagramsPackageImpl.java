@@ -6,6 +6,7 @@
  */
 package ac.soton.eventb.emf.diagrams.impl;
 
+import ac.soton.eventb.emf.containment.ContainmentPackage;
 import ac.soton.eventb.emf.diagrams.Diagram;
 import ac.soton.eventb.emf.diagrams.DiagramOwner;
 import ac.soton.eventb.emf.diagrams.DiagramsFactory;
@@ -15,7 +16,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eventb.emf.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,6 +93,11 @@ public class DiagramsPackageImpl extends EPackageImpl implements DiagramsPackage
 		DiagramsPackageImpl theDiagramsPackage = (DiagramsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DiagramsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DiagramsPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		ContainmentPackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDiagramsPackage.createPackageContents();
@@ -190,11 +198,15 @@ public class DiagramsPackageImpl extends EPackageImpl implements DiagramsPackage
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		ContainmentPackage theContainmentPackage = (ContainmentPackage)EPackage.Registry.INSTANCE.getEPackage(ContainmentPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		diagramEClass.getESuperTypes().add(theContainmentPackage.getAbstractContainableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(diagramEClass, Diagram.class, "Diagram", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

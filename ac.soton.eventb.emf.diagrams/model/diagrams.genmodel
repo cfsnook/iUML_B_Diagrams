@@ -5,7 +5,7 @@
     modelPluginID="ac.soton.eventb.emf.diagrams" templateDirectory="/org.eventb.emf.core/templates"
     dynamicTemplates="true" modelName="Diagrams" importerID="org.eclipse.emf.importer.ecore"
     containmentProxies="true" complianceLevel="6.0" providerRootExtendsClass="" editPluginID="ac.soton.eventb.emf.diagrams.edit"
-    colorProviders="true">
+    colorProviders="true" usedGenPackages="../../ac.soton.eventb.emf.containment/model/containment.genmodel#//containment ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eventb.emf.core/model/eventbcore.genmodel#//core">
   <foreignModel>diagrams.ecore</foreignModel>
   <genPackages prefix="Diagrams" basePackage="ac.soton.eventb.emf" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="diagrams.ecore#/">

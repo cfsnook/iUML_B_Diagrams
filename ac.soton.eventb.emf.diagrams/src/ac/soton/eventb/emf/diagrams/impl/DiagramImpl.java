@@ -6,12 +6,14 @@
  */
 package ac.soton.eventb.emf.diagrams.impl;
 
+import ac.soton.eventb.emf.containment.impl.AbstractContainableElementImpl;
 import ac.soton.eventb.emf.diagrams.Diagram;
 import ac.soton.eventb.emf.diagrams.DiagramsPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eventb.emf.core.EventBNamedCommentedComponentElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +24,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public abstract class DiagramImpl extends EObjectImpl implements Diagram {
+public abstract class DiagramImpl extends AbstractContainableElementImpl implements Diagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

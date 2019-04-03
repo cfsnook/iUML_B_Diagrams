@@ -6,6 +6,7 @@
  */
 package ac.soton.eventb.emf.diagrams;
 
+import ac.soton.eventb.emf.containment.ContainmentPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -76,13 +77,23 @@ public interface DiagramsPackage extends EPackage {
 	int DIAGRAM = 0;
 
 	/**
+	 * The feature id for the '<em><b>Target Component</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 5.0
+	 */
+	int DIAGRAM__TARGET_COMPONENT = ContainmentPackage.ABSTRACT_CONTAINABLE_ELEMENT__TARGET_COMPONENT;
+
+	/**
 	 * The number of structural features of the '<em>Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_FEATURE_COUNT = 0;
+	int DIAGRAM_FEATURE_COUNT = ContainmentPackage.ABSTRACT_CONTAINABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ac.soton.eventb.emf.diagrams.impl.DiagramOwnerImpl <em>Diagram Owner</em>}' class.

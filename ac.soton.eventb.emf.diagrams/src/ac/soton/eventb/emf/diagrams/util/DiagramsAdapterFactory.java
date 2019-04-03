@@ -6,6 +6,7 @@
  */
 package ac.soton.eventb.emf.diagrams.util;
 
+import ac.soton.eventb.emf.containment.AbstractContainableElement;
 import ac.soton.eventb.emf.diagrams.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -86,6 +87,10 @@ public class DiagramsAdapterFactory extends AdapterFactoryImpl {
 				return createDiagramOwnerAdapter();
 			}
 			@Override
+			public Adapter caseAbstractContainableElement(AbstractContainableElement object) {
+				return createAbstractContainableElementAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -130,6 +135,21 @@ public class DiagramsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiagramOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ac.soton.eventb.emf.containment.AbstractContainableElement <em>Abstract Containable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ac.soton.eventb.emf.containment.AbstractContainableElement
+	 * @generated
+	 * @since 5.0
+	 */
+	public Adapter createAbstractContainableElementAdapter() {
 		return null;
 	}
 
